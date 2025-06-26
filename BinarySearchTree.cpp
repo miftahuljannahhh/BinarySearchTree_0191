@@ -47,7 +47,7 @@ public:
         Node *currentNode = nullptr;
         search(x, parent, currentNode);
 
-        // Steo 5: if parent is NULL (tree is empty)
+        // Step 5: if parent is NULL (tree is empty)
         if (parent == nullptr)
         {
             // 5a: Mark the new node as ROOT
@@ -56,5 +56,14 @@ public:
             // 5b: Exit
             return;
         }
+     // Step 6: If the value in the data field of new node is less than that of parent
+     if (x < parent->info)
+     {
+         // 6a: Make the left child of parent point the new node
+         parent->leftchild = newNode;
+ 
+         // 6b: Exit
+         return;
+     }
     }
 };
