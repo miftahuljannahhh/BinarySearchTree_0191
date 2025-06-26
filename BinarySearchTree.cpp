@@ -32,20 +32,29 @@ public:
         cout << "Masukkan nilai: ";
         cin >> x;
 
-     // Step 1: Allocate memory for the new node
-     Node *newNode = new Node();
+        // Step 1: Allocate memory for the new node
+        Node *newNode = new Node();
 
-    // step 2: Assign value to the data field of the node
-    newNode->info = x;
+        // step 2: Assign value to the data field of the node
+        newNode->info = x;
 
-     // Step 3: Make the left and right child of the new node point to NULL
-     newNode->leftchild = nullptr;
-     newNode->rightchild = nullptr;
- 
-    // Step 4: Locate the node withch will be the parent of the node to be inserted
-    Node *parent = nullptr;
-    Node *currentNode = nullptr;
-    search(x, parent, currentNode);
+        // Step 3: Make the left and right child of the new node point to NULL
+        newNode->leftchild = nullptr;
+        newNode->rightchild = nullptr;
 
+        // Step 4: Locate the node withch will be the parent of the node to be inserted
+        Node *parent = nullptr;
+        Node *currentNode = nullptr;
+        search(x, parent, currentNode);
+
+        // Steo 5: if parent is NULL (tree is empty)
+        if (parent == nullptr)
+        {
+            // 5a: Mark the new node as ROOT
+            ROOT = newNode;
+
+            // 5b: Exit
+            return;
+        }
     }
 };
